@@ -9,19 +9,18 @@
 	</head>
 	<body>
 		<div class="container">
-			<br />
-			<br />
 			<h1>Timestamp API</h1>
+		</div>
+		<div class="container">
+			<p>Pass a string as a parameter and this microservice  will check to see whether that string contains either a unix timestamp or a natural language date.</p>
+			<p>If it does, it returns both the Unix timestamp and the natural language form of that date.</p> 
+			<p>If it does not contain a date or Unix timestamp, it returns null for those properties.</p>
 		</div>
 	
 		<div class="container">
-			<br />
 			<h3>Example usage:</h3>
-			<code>https://timestamp-ms.herokuapp.com/December%2015,%202015</code>
-			<br />
-			<code>https://timestamp-ms.herokuapp.com/1450137600</code>
-			<br />
-			<br />
+			<p><code>https://timestamp-ms.herokuapp.com/December%2015,%202015</code></p>
+			<p><code>https://timestamp-ms.herokuapp.com/1450137600</code></p>
 			<h3>Example output:</h3>
 			<code>{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
 		</div>

@@ -15,10 +15,10 @@ function ClickHandler () {
 
 		if (!isNaN(dateParam)) {
 			result.unix = parseInt(dateParam);
-			result.natural = createNaturalDate(new Date(parseInt(dateParam)));
+			result.natural = createNaturalDate(new Date((parseInt(dateParam)) * 1000));
 
 		} else if ((parsedDate !== "Invalid Date") && (!isNaN(parsedDate))) {
-			result.unix = parsedDate;
+			result.unix = parsedDate / 1000;
 			result.natural = createNaturalDate(new Date(Date.parse(dateParam)));
 		}
 
