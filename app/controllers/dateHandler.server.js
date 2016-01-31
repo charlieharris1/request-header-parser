@@ -10,14 +10,15 @@ function ClickHandler () {
 
 	this.getDateJson = function (req, res) {
 		var dateParam = req.params.date;
+		var parsedDate = Date.parse(dateParam);
 		var result = { unix: null, natural: null };
 
 		if (!isNaN(dateParam)) {
 			result.unix = parseInt(dateParam);
 			result.natural = createNaturalDate(new Date(parseInt(dateParam)));
 
-		} else if (Date.parse(dateParam) !== "Invalid Date") {
-			result.unix = Date.parse(dateParam) / 1000;
+		} else if ((parsedDate !== "Invalid Date") && (!isNaN(parsedDate))) {
+			result.unix = parsedDate;
 			result.natural = createNaturalDate(new Date(Date.parse(dateParam)));
 		}
 
