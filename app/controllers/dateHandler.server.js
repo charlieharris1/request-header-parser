@@ -2,18 +2,27 @@
 
 function ClickHandler () {
 
+	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+	function createNaturalDate (date) {
+		return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+	}
+
 	this.getDateJson = function (req, res) {
-		if(req.params.date)
+		var dateParam = req.params.date;
+		var result = { unix: null, natural: null };
 
-		var unixTimestamp = parseInt(req.params.date);
-		var naturalLanguageDate = new Date(unixTimestamp).toString();
+		if (!isNaN(dateParam)) {
+			result.unix = parseInt(dateParam);
+			result.natural = createNaturalDate(new Date(parseInt(dateParam)));
 
-		var result = {
-			unix: unixTimestamp,
-			natural: naturalLanguageDate
+		} else if (Date.parse(dateParam) !== "Invalid Date") {
+			result.unix = Date.parse(dateParam) / 1000;
+			result.natural = createNaturalDate(new Date(Date.parse(dateParam)));
 		}
 
 		res.json(result);
+
 	};
 }
 
