@@ -17,18 +17,21 @@
 
 	<body>
 		<div class="container">
-			<img src="/public/img/clementine_150.png" />
 			<br />
-			<p class="clementine-text">Clementine.js</p>
+			<br />
+			<p class="clementine-text">Timestamp API</p>
 		</div>
 	
 		<div class="container">
-			<p>You have clicked the button <span id="click-nbr"></span> times.</p>
 			<br />
-			<div class="btn-container">
-				<button type="submit" class="btn btn-add">CLICK ME!</button>
-				<button class="btn btn-delete">RESET</button>
-			</div>
+			<h3>Example usage:</h3>
+			<code>https://timestamp-ms.herokuapp.com/December%2015,%202015</code>
+			<br />
+			<code>https://timestamp-ms.herokuapp.com/1450137600</code>
+			<br />
+			<br />
+			<h3>Example output:</h3>
+			<code>{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
 		</div>
 		
 		<script type="text/javascript" src="common/ajax-functions.js"></script>

@@ -2,6 +2,7 @@
 
 var path = process.cwd();
 var ClickHandler = require(path + '/app/controllers/clickHandler.server.js');
+var DateHandler = require(path + '/app/controllers/dateHandler.server.js');
 
 module.exports = function (app, passport) {
 
@@ -14,12 +15,16 @@ module.exports = function (app, passport) {
 	}
 
 	var clickHandler = new ClickHandler();
+	var dateHandler = new DateHandler();
 
 	app.route('/')
 		.get(isLoggedIn, function (req, res) {
 			res.sendFile(path + '/public/index.html');
 		});
-
+	
+	app.route('/:date') 
+		.get(dateHandler.getDateJson);
+		
 	app.route('/login')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/login.html');
