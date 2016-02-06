@@ -1,14 +1,14 @@
 {
-  "name": "timestamp-api",
+  "name": "request-header-parser",
   "version": "0.0.1",
-  "description": "Simple timestamp api.",
+  "description": "Simple request header parser",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charlieharris1/timestamp"
+    "url": "git+https://github.com/charlieharris1/request-header-parser"
   },
-  "homepage": "https://blooming-sands-63935.herokuapp.com/",
-  "bugs": "https://github.com/charlieharris1/timestamp/issues",
+  "homepage": "",
+  "bugs": "https://github.com/charlieharris1/request-header-parser/issues",
   "keywords": [
     "full stack",
     "Express",
